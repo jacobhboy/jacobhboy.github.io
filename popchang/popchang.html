@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color:black;
+            text-align:center;
+            line-height: 20px;
+        }
+        
+        #hang{
+            width:600px;
+            height: 400px;
+            margin: 0 auto;
+            background-image: url(./img/pop3.jpg);
+            background-repeat:no-repeat;
+            background-size : cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="hang">
+        <h1>Don't thouch me</h1>
+        <h1 id="num">0</h1>
+    </div>
+    <a href="./../index.html"><button id="button1" onclick="button1_click();">홈으로 돌아가기</button></a>
+    <script>
+        const $pop = document.getElementById("hang");
+        const $number = document.getElementById("num");
+        $number = addEventListener("keydown" , inc , true);
+        function inc(){
+            const current = parseInt($number.textContent);
+            $number.textContent= current + 1;
+            $pop.style.backgroundImage = "url(./img/pop4.jpg)";
+            setTimeout(function(){
+                $pop.style.backgroundImage = "url(./img/pop3.jpg)"; 
+            },100); 
+        }
+    </script>
+</body>
+</html>
